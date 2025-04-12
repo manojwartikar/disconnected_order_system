@@ -1,0 +1,19 @@
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+  name: order-management-system 
+spec: 
+  replicas: 1 
+  selector: 
+    matchLabels: 
+      app: order-management-system 
+  template: 
+    metadata: 
+      labels: 
+        app: order-management-system 
+    spec: 
+      containers: 
+        - name: order-management-system 
+          image: order-management-system:latest 
+          ports: 
+            - containerPort: 8080 
